@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+body {
+    background: #010101;
+}
+
+.trans {
+    width: 100px;
+    height: 100px;
+    background: yellowgreen;
+    margin: 500px auto;
+    transition: 1s;
+    transform: translate(300px, -400px);
+}

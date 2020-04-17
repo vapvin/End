@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        @charset "utf-8";
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;700&family=Noto+Sans+KR:wght@100;400;700;900&display=swap');
+/* reset */
+input[type="text"]{
+    padding:0 10px;
+    width:100%;
+    font-size:12px;
+    line-height:normal;
+    color:#000;
+    height:56px;
+    border-top-width:initial;
+    border-bottom-width:initial;
+    border-right-width:initial;
+    border-left-width:initial;
+    box-sizing:border-box;
+    border-top-color:initial;
+    border-bottom-color:initial;
+    border-right-color:initial;
+    border-left-color:initial;
+    text-decoration:none;
+    border-style:none;
+    border-image:initial;
+    outline:none;
+    font-family:"Noto Sans KR";
+}
+button{
+    font-family:"Noto Sans KR";
+    cursor:pointer;
+    border-width:0;
+    border-style:none;
+    border-color:initial;
+    border-image:initial;
+}
+input,select,textarea,button{
+    border-radius:0;
+    font-size:100%;
+    vertical-align:middle;
+}
+
+body{
+    background:#ccc;
+    font-family: 'Baloo Paaji 2', 'Noto Sans KR', sans-serif, cursive;
+}
+
+.btn{
+    display: block;
+    width:56px;
+    height:56px;
+    color:transparent;
+}
+label{
+    position: absolute;
+}
+.input-container{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.input-box{
+    position: relative;
+    display: table-cell;
+}
+.input-box::before{
+    content:'';
+    position: absolute;
+    width:100%;
+    height:2px;
+    background:#ccc;
+    left:0;
+    bottom:2px;
+}
+
+.input-box::after{
+    transition:0.5s;
+    content:'';
+    position: absolute;
+    width:0;
+    height:2px;
+    background:#333;
+    left:0;
+    bottom:2px;
+}
+.input-box.on::after{
+    width:100%;
+}
+
+.number{
+    display: table-cell;
+    background-color:#bbb;
+    /* width:56px; */
+    width:80px;
+    text-align: center;
+    font-weight:400;
+}
+.input-wrap{
+    position: relative;
+    height:56px;
+    padding:0 56px;
+}
+
+/* btn */
+.btn{
+    transition:0.5s;
+    background-color:#fff;
+    top:0;
+    position: absolute;
+}
+.btn:hover{
+    background-color:#ccc;
+}
+.btn-prev{
+    left:0;
+    background-image:url('../ico/ico_arrow.png');
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+    background-size:24px 24px;
+}
+.btn-search{
+    right:0;
+    background-image:url('../ico/ico_search.png');
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+    background-size:24px 24px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>CSS3 Table + Positions</h1>
+        <!-- Type-1 -->
+        <h2>Type 1</h2>
+        <div class="input-wrap">
+            <button type="button" class="btn btn-prev">이전</button>
+            <div class="input-container">
+                <div class="input-box">
+                    <label for="abc"></label>
+                    <input type="text" id="abc">
+                </div>
+                <span class="number">(123,456)</span>
+            </div>
+            <button type="button" class="btn btn-search">검색</button>
+        </div>
+
+        <!-- Type-2 -->
+        <h2>Type 2</h2>
+        <div class="input-wrap">
+            <button type="button" class="btn btn-prev">이전</button>
+            <div class="input-container">
+                <div class="input-box">
+                    <label for="bcd"></label>
+                    <input type="text" id="bcd">
+                </div>
+            </div>
+            <button type="button" class="btn btn-search">검색</button>
+        </div>
+    </div>
+    <script>
+
+        const inputBox = document.getElementsByClassName("input-box");
+        for(i = 0; i < inputBox.length; i++){
+            inputBox[i].addEventListener("click", function(){
+                this.classList.toggle("on");
+            });
+        }
+    </script>
+</body>
+</html>
