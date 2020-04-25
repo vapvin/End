@@ -15,6 +15,8 @@ a {
     height: auto;
 }
 
+/* header */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -25,6 +27,7 @@ header {
     width: 100%;
     height: 80px;
     padding: 0 100px;
+    z-index: 9999999999;
 }
 
 .logo {
@@ -36,7 +39,7 @@ header {
     width: 100%;
     height: 100%;
     align-items: center;
-    color: #666;
+    color: #222;
 }
 
 .gnb {
@@ -65,10 +68,55 @@ header {
     justify-content: center;
     width: 100%;
     height: 100%;
-    color: #666;
+    color: #222;
     transition: 0.2s;
 }
 
 .gnb ul li:hover a {
-    border: 2px solid #666;
+    border: 2px solid #222;
+}
+
+/* main benner */
+
+.main-bn {
+    width: 100%;
+    height: 80vh;
+    padding: 10px;
+    position: relative;
+}
+
+.main-bn img {
+    width: 100%;
+    height: 100%;
+}
+
+.mb-text {
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mb-text h2 {
+    font-size: 100px;
+    color: #333;
+    letter-spacing: 15px;
+}
+
+.mb-text p {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.under-bar {
+    width: 60px;
+    height: 5px;
+    background: #333222;
+    margin-top: 35px;
 }
